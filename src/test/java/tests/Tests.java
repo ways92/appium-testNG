@@ -1,18 +1,19 @@
 package tests;
 
+import base.BaseClass;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Tests extends BaseClass{
+public class Tests extends BaseClass {
 
 
     @Test
     public void testModel() {
+        System.out.println("test started.....");
 
         MobileElement btn2 , btn4, btnMultiply, fieldTotal;
-        System.out.println("test started.....");
 
         btn2 = driver.findElement(By.id("com.google.android.calculator:id/digit_2"));
         btn2.click();

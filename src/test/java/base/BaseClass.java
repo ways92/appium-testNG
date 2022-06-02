@@ -1,4 +1,4 @@
-package tests;
+package base;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -11,21 +11,25 @@ import java.net.URL;
 
 public class BaseClass {
 
-    static AppiumDriver<MobileElement> driver;
+    public static AppiumDriver<MobileElement> driver;
 
     @BeforeTest
     public void setup(){
 
         try {
         DesiredCapabilities caps = new DesiredCapabilities();
+        String pathProp =  System.getProperty("user.dir");
+
 
         caps.setCapability("platformName","ANDROID");
         caps.setCapability("platformVersion","11");
         caps.setCapability("deviceName","Pixel 3a");
-        caps.setCapability("udid","emulator-5554");
+        caps.setCapability("udid","emulator-5556");
 
-        caps.setCapability("appPackage","com.google.android.calculator");
-        caps.setCapability("appActivity","com.android.calculator2.Calculator");
+        caps.setCapability("app",pathProp+"\\src\\test\\resources\\apps\\Calculator.apk");
+
+//        caps.setCapability("appPackage","com.google.android.calculator");
+//        caps.setCapability("appActivity","com.android.calculator2.Calculator");
 
 
 
